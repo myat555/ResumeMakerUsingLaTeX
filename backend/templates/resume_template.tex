@@ -1,0 +1,188 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Adapted with placeholder tokens
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape {{NAME}}} \\ \vspace{1pt}
+    \small {{PHONE}} $|$ 
+    \href{mailto:x@x.com{{EMAIL}}}{\underline{{{EMAIL}}}} $|$
+    \href{https://linkedin.com/in/...}{\underline{{{LINKEDIN}}}} $|$
+    \href{https://github.com/...}{\underline{{{GITHUB}}}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+
+    % Education Entry #1
+    \resumeSubheading
+      { {{EDU1_INSTITUTION}} }{ {{EDU1_LOCATION}} }
+      { {{EDU1_DEGREE}} }{ {{EDU1_DATE}} }
+
+    % Education Entry #2
+    \resumeSubheading
+      { {{EDU2_INSTITUTION}} }{ {{EDU2_LOCATION}} }
+      { {{EDU2_DEGREE}} }{ {{EDU2_DATE}} }
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    % Experience #1
+    \resumeSubheading
+      { {{EXP1_TITLE}} }{ {{EXP1_DATES}} }
+      { {{EXP1_COMPANY}} }{ {{EXP1_LOCATION}} }
+      \resumeItemListStart
+        \resumeItem{ {{EXP1_BULLET1}} }
+        \resumeItem{ {{EXP1_BULLET2}} }
+        \resumeItem{ {{EXP1_BULLET3}} }
+      \resumeItemListEnd
+
+    % Experience #2
+    \resumeSubheading
+      { {{EXP2_TITLE}} }{ {{EXP2_DATES}} }
+      { {{EXP2_COMPANY}} }{ {{EXP2_LOCATION}} }
+      \resumeItemListStart
+        \resumeItem{ {{EXP2_BULLET1}} }
+        \resumeItem{ {{EXP2_BULLET2}} }
+        \resumeItem{ {{EXP2_BULLET3}} }
+      \resumeItemListEnd
+
+    % Experience #3
+    \resumeSubheading
+      { {{EXP3_TITLE}} }{ {{EXP3_DATES}} }
+      { {{EXP3_COMPANY}} }{ {{EXP3_LOCATION}} }
+      \resumeItemListStart
+        \resumeItem{ {{EXP3_BULLET1}} }
+        \resumeItem{ {{EXP3_BULLET2}} }
+        \resumeItem{ {{EXP3_BULLET3}} }
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      % Project #1
+      \resumeProjectHeading
+          {\textbf{ {{PROJ1_NAME}} } $|$ \emph{ {{PROJ1_STACK}} }}{ {{PROJ1_DATES}} }
+          \resumeItemListStart
+            \resumeItem{ {{PROJ1_BULLET1}} }
+            \resumeItem{ {{PROJ1_BULLET2}} }
+            \resumeItem{ {{PROJ1_BULLET3}} }
+          \resumeItemListEnd
+
+      % Project #2
+      \resumeProjectHeading
+          {\textbf{ {{PROJ2_NAME}} } $|$ \emph{ {{PROJ2_STACK}} }}{ {{PROJ2_DATES}} }
+          \resumeItemListStart
+            \resumeItem{ {{PROJ2_BULLET1}} }
+            \resumeItem{ {{PROJ2_BULLET2}} }
+            \resumeItem{ {{PROJ2_BULLET3}} }
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: {{TECH_LANGUAGES}}} \\
+     \textbf{Frameworks}{: {{TECH_FRAMEWORKS}}} \\
+     \textbf{Developer Tools}{: {{TECH_TOOLS}}} \\
+     \textbf{Libraries}{: {{TECH_LIBRARIES}}}
+    }}
+ \end{itemize}
+
+\end{document}
