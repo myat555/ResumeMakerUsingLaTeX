@@ -1,0 +1,43 @@
+{
+  "NAME": "John Doe",
+  "PHONE": "123-456-7890",
+  "EMAIL": "johndoe@example.com",
+  "LINKEDIN": "linkedin.com/in/johndoe",
+  "GITHUB": "github.com/johndoe",
+  "education": [
+    {
+      "institution": "Harvard University",
+      "degree": "B.Sc. in Computer Science",
+      "location": "Cambridge, MA",
+      "date": "Aug. 2018 -- May 2022"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tech Corp",
+      "title": "Software Engineer",
+      "location": "San Francisco, CA",
+      "dates": "Jun. 2022 -- Present",
+      "bullets": [
+        "Developed scalable APIs using Node.js and Express.",
+        "Optimized PostgreSQL queries, improving performance by 40%."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Website",
+      "date": "May 2022 -- Present",
+      "bullets": [
+        "Designed a personal website using React and Next.js.",
+        "Integrated blog with Markdown and deployed on Vercel."
+      ]
+    }
+  ],
+  "techSkills": {
+    "languages": ["JavaScript", "Python"],
+    "frameworks": ["React", "Node.js"],
+    "tools": ["Git", "Docker"],
+    "libraries": ["Redux", "TensorFlow"]
+  }
+}

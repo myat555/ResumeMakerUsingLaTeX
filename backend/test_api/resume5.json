@@ -1,0 +1,34 @@
+{
+  "NAME": "Charlie DevOps",
+  "PHONE": "123-987-6540",
+  "EMAIL": "charliedevops@example.com",
+  "LINKEDIN": "",
+  "GITHUB": "github.com/charliedevops",
+  "education": [
+    {
+      "institution": "University of DevOps",
+      "degree": "B.Sc. in Cloud Computing",
+      "location": "Cloud City",
+      "date": "Jan. 2020 -- Dec. 2023"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Cloud Innovators",
+      "title": "Junior DevOps Engineer",
+      "location": "Remote",
+      "dates": "Jan. 2024 -- Present",
+      "bullets": [
+        "Automated CI/CD pipelines using Jenkins and GitHub Actions.",
+        "Monitored infrastructure using Prometheus and Grafana."
+      ]
+    }
+  ],
+  "projects": [],
+  "techSkills": {
+    "languages": ["Bash", "Python"],
+    "frameworks": [],
+    "tools": ["Kubernetes", "Terraform"],
+    "libraries": []
+  }
+}

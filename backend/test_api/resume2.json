@@ -1,0 +1,17 @@
+{
+    "NAME": "Jane Smith",
+    "PHONE": "987-654-3210",
+    "EMAIL": "janesmith@example.com",
+    "LINKEDIN": "",
+    "GITHUB": "",
+    "education": [],
+    "experience": [],
+    "projects": [],
+    "techSkills": {
+      "languages": [],
+      "frameworks": [],
+      "tools": [],
+      "libraries": []
+    }
+  }
+  

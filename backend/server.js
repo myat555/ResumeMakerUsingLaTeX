@@ -18,15 +18,82 @@ const OUTPUT_DIR = path.join(__dirname, "output");
 // Ensure output directory exists
 fs.ensureDirSync(OUTPUT_DIR);
 
-// Function to replace placeholders in the LaTeX template
+// Function to sanitize URLs
+const sanitizeURL = (url) => url.replace(/https?:\/\/(www\.)?/g, "");
+
+// Function to escape LaTeX special characters
+const escapeLatex = (str) => {
+    if (!str) return "";
+    return str
+        .replace(/\\/g, "\\textbackslash{}")  // Handle backslashes first
+        .replace(/&/g, "\\&")  // Handle ampersand
+        .replace(/%/g, "\\%")  // Handle percentage
+        .replace(/\$/g, "\\$")  // Handle dollar sign
+        .replace(/#/g, "\\#")  // Handle hash
+        .replace(/_/g, "\\_")  // Handle underscore
+        .replace(/{/g, "\\{")  // Handle curly braces
+        .replace(/}/g, "\\}")  // Handle curly braces
+        .replace(/\^/g, "\\textasciicircum{}")  // Handle caret
+        .replace(/~/g, "\\textasciitilde{}");  // Handle tilde
+};
+
+// Function to generate LaTeX content dynamically
 const generateLatexFile = (userData) => {
     let latexTemplate = fs.readFileSync(TEMPLATE_PATH, "utf8");
 
-    // Replace placeholders with user-provided values
-    Object.keys(userData).forEach((key) => {
-        const placeholder = `{{${key}}}`;
-        latexTemplate = latexTemplate.replace(new RegExp(placeholder, "g"), userData[key] || "");
+    // Replace personal information placeholders
+    const personalInfo = {
+        "NAME": userData.NAME || "",
+        "PHONE": userData.PHONE || "",
+        "EMAIL": userData.EMAIL || "",
+        "LINKEDIN": sanitizeURL(userData.LINKEDIN || ""),
+        "GITHUB": sanitizeURL(userData.GITHUB || "")
+    };
+        
+    Object.keys(personalInfo).forEach((key) => {
+            latexTemplate = latexTemplate.replace(new RegExp(`{{${key}}}`, "g"), personalInfo[key]);
     });
+    
+
+    // Replace education placeholders
+    const formatEducation = (edu) => `
+        \\resumeSubheading
+        {${escapeLatex(edu.institution)}}{${escapeLatex(edu.location)}}
+        {${escapeLatex(edu.degree)}}{${escapeLatex(edu.date)}}
+    `;
+    latexTemplate = latexTemplate.replace("{{EDUCATION}}", userData.education.map(formatEducation).join("\n"));
+
+    // Replace experience placeholders
+    const formatExperience = (exp) => `
+        \\resumeSubheading
+        {${escapeLatex(exp.title)}}{${escapeLatex(exp.dates)}}
+        {${escapeLatex(exp.company)}}{${escapeLatex(exp.location)}}
+        \\resumeItemListStart
+            ${exp.bullets.map(bullet => `\\resumeItem{${escapeLatex(bullet)}}`).join("\n")}
+        \\resumeItemListEnd
+    `;
+    latexTemplate = latexTemplate.replace("{{EXPERIENCE}}", userData.experience.map(formatExperience).join("\n"));
+
+    // Replace projects placeholders
+    const formatProject = (proj) => `
+        \\resumeProjectHeading
+        {${escapeLatex(proj.name)}}{${escapeLatex(proj.date)}}
+        \\resumeItemListStart
+            ${proj.bullets.map(bullet => `\\resumeItem{${escapeLatex(bullet)}}`).join("\n")}
+        \\resumeItemListEnd
+    `;
+    latexTemplate = latexTemplate.replace("{{PROJECTS}}", userData.projects ? userData.projects.map(formatProject).join("\n") : "\\vspace{-10pt}");
+
+    // Replace technical skills
+    const technicalSkillsContent = `
+        \\textbf{Languages}{: ${userData.techSkills.languages.join(", ") || "None"}} \\\\
+        \\textbf{Frameworks}{: ${userData.techSkills.frameworks.join(", ") || "None"}} \\\\
+        \\textbf{Developer Tools}{: ${userData.techSkills.tools.join(", ") || "None"}} \\\\
+        \\textbf{Libraries}{: ${userData.techSkills.libraries.join(", ") || "None"}}
+    `;
+    latexTemplate = latexTemplate.replace("{{TECHNICAL_SKILLS}}", technicalSkillsContent);
+
+    
 
     // Generate unique file name
     const fileName = `resume_${Date.now()}.tex`;
@@ -46,11 +113,16 @@ app.post("/generate-resume", async (req, res) => {
         const texFilePath = generateLatexFile(userData);
         const pdfFilePath = texFilePath.replace(".tex", ".pdf");
 
-        // Run pdflatex (or xelatex for better font support) to compile LaTeX into PDF
-        exec(`pdflatex -output-directory=${OUTPUT_DIR} ${texFilePath}`, (error, stdout, stderr) => {
+        // Run pdflatex to compile LaTeX into PDF
+        exec(`pdflatex -interaction=nonstopmode -output-directory=${OUTPUT_DIR} ${texFilePath}`, (error, stdout, stderr) => {
             if (error) {
-                console.error("LaTeX Compilation Error:", stderr);
-                return res.status(500).json({ error: "Failed to generate PDF" });
+                console.warn("LaTeX Compilation Warning/Error:", stderr);
+                if (!fs.existsSync(pdfFilePath)) {
+                    return res.status(500).json({
+                        error: "Critical LaTeX compilation error. PDF could not be generated.",
+                        details: stderr,
+                    });
+                }
             }
 
             console.log("PDF Generated Successfully:", pdfFilePath);
