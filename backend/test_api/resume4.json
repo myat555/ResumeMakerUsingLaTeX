@@ -1,16 +1,44 @@
 {
-  "NAME": "Bob Developer",
-  "PHONE": "321-654-9870",
-  "EMAIL": "bobdeveloper@example.com",
-  "LINKEDIN": "linkedin.com/in/bobdeveloper",
-  "GITHUB": "github.com/bobdeveloper",
-  "education": [],
-  "experience": [],
-  "projects": [],
+  "NAME": "David Kim",
+  "PHONE": "+123987456",
+  "EMAIL": "david@example.com",
+  "LINKEDIN": "linkedin.com/in/davidkim",
+  "GITHUB": "github.com/davidkim",
+  "education": [
+    {
+      "institution": "Carnegie Mellon University",
+      "location": "Pittsburgh, PA",
+      "degree": "M.Sc. in Robotics",
+      "date": "Sep. 2019 - May 2021"
+    }
+  ],
+  "experience": [
+    {
+      "company": "RoboCorp",
+      "title": "Robotics Engineer",
+      "location": "Pittsburgh, PA",
+      "dates": "June 2021 - Present",
+      "bullets": [
+        "Developed autonomous navigation algorithms for robots",
+        "Integrated sensors for SLAM and object detection"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Autonomous Drone",
+      "date": "Jan. 2021 - May 2021",
+      "techStack": ["ROS", "OpenCV", "Python"],
+      "bullets": [
+        "Designed navigation algorithms for drone autonomy",
+        "Implemented real-time object detection using OpenCV"
+      ]
+    }
+  ],
   "techSkills": {
-    "languages": ["JavaScript", "TypeScript", "Go", "Rust"],
-    "frameworks": ["Angular", "Vue.js", "Express.js"],
-    "tools": ["Visual Studio Code", "Jenkins", "AWS"],
-    "libraries": ["D3.js", "Chart.js", "Axios"]
+    "languages": ["Python", "C++", "MATLAB"],
+    "frameworks": ["ROS", "TensorFlow"],
+    "tools": ["Git", "Docker"],
+    "libraries": ["OpenCV", "NumPy"]
   }
 }

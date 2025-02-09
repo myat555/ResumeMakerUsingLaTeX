@@ -74,10 +74,10 @@ const generateLatexFile = (userData) => {
     `;
     latexTemplate = latexTemplate.replace("{{EXPERIENCE}}", userData.experience.map(formatExperience).join("\n"));
 
-    // Replace projects placeholders
+    // Replace projects placeholders with tech stack
     const formatProject = (proj) => `
         \\resumeProjectHeading
-        {${escapeLatex(proj.name)}}{${escapeLatex(proj.date)}}
+        {${escapeLatex(proj.name)} $|$ \\emph{${proj.techStack.map(escapeLatex).join(", ")}}}{${escapeLatex(proj.date)}}
         \\resumeItemListStart
             ${proj.bullets.map(bullet => `\\resumeItem{${escapeLatex(bullet)}}`).join("\n")}
         \\resumeItemListEnd

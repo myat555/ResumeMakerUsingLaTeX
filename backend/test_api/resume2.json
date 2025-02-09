@@ -1,17 +1,50 @@
 {
-    "NAME": "Jane Smith",
-    "PHONE": "987-654-3210",
-    "EMAIL": "janesmith@example.com",
-    "LINKEDIN": "",
-    "GITHUB": "",
-    "education": [],
-    "experience": [],
-    "projects": [],
-    "techSkills": {
-      "languages": [],
-      "frameworks": [],
-      "tools": [],
-      "libraries": []
+  "NAME": "Bob Smith",
+  "PHONE": "+987654321",
+  "EMAIL": "bob@example.com",
+  "LINKEDIN": "linkedin.com/in/bobsmith",
+  "GITHUB": "github.com/bobsmith",
+  "education": [
+    {
+      "institution": "Stanford University",
+      "location": "Stanford, CA",
+      "degree": "M.Sc. in Data Science",
+      "date": "Sep. 2020 - June 2022"
+    },
+    {
+      "institution": "UC Berkeley",
+      "location": "Berkeley, CA",
+      "degree": "B.Sc. in Mathematics",
+      "date": "Sep. 2016 - May 2020"
     }
+  ],
+  "experience": [
+    {
+      "company": "Data Insights Inc.",
+      "title": "Data Analyst",
+      "location": "New York, NY",
+      "dates": "July 2022 - Present",
+      "bullets": [
+        "Analyzed large datasets to identify trends using Python and SQL",
+        "Built dashboards using Tableau for real-time business insights"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Data Visualization Dashboard",
+      "date": "Jan. 2021 - May 2021",
+      "techStack": ["Tableau", "Python"],
+      "bullets": [
+        "Created interactive dashboards for financial data analysis",
+        "Integrated data sources using REST APIs"
+      ]
+    }
+  ],
+  "techSkills": {
+    "languages": ["Python", "R", "SQL"],
+    "frameworks": ["Flask", "Django"],
+    "tools": ["Tableau", "Power BI"],
+    "libraries": ["pandas", "Matplotlib", "Seaborn"]
   }
-  
+}

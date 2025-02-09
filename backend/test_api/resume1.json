@@ -1,36 +1,37 @@
 {
-  "NAME": "John Doe",
-  "PHONE": "123-456-7890",
-  "EMAIL": "johndoe@example.com",
-  "LINKEDIN": "linkedin.com/in/johndoe",
-  "GITHUB": "github.com/johndoe",
+  "NAME": "Alice Johnson",
+  "PHONE": "+123456789",
+  "EMAIL": "alice@example.com",
+  "LINKEDIN": "linkedin.com/in/alicejohnson",
+  "GITHUB": "github.com/alicejohnson",
   "education": [
     {
       "institution": "Harvard University",
-      "degree": "B.Sc. in Computer Science",
       "location": "Cambridge, MA",
-      "date": "Aug. 2018 -- May 2022"
+      "degree": "B.Sc. in Computer Science",
+      "date": "Aug. 2018 - May 2022"
     }
   ],
   "experience": [
     {
-      "company": "Tech Corp",
+      "company": "Tech Innovators",
       "title": "Software Engineer",
       "location": "San Francisco, CA",
-      "dates": "Jun. 2022 -- Present",
+      "dates": "June 2022 - Present",
       "bullets": [
-        "Developed scalable APIs using Node.js and Express.",
-        "Optimized PostgreSQL queries, improving performance by 40%."
+        "Developed scalable APIs using Node.js and Express",
+        "Optimized PostgreSQL queries, improving performance by 40%"
       ]
     }
   ],
   "projects": [
     {
       "name": "Portfolio Website",
-      "date": "May 2022 -- Present",
+      "date": "May 2022 - Present",
+      "techStack": ["React", "Next.js", "CSS"],
       "bullets": [
-        "Designed a personal website using React and Next.js.",
-        "Integrated blog with Markdown and deployed on Vercel."
+        "Designed a personal portfolio showcasing projects",
+        "Implemented responsive design for mobile and desktop views"
       ]
     }
   ],
@@ -38,6 +39,6 @@
     "languages": ["JavaScript", "Python"],
     "frameworks": ["React", "Node.js"],
     "tools": ["Git", "Docker"],
-    "libraries": ["Redux", "TensorFlow"]
+    "libraries": ["pandas", "NumPy"]
   }
 }

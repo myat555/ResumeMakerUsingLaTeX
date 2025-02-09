@@ -1,61 +1,44 @@
 {
-    "NAME": "Alice Johnson",
-    "PHONE": "456-789-0123",
-    "EMAIL": "alice@example.com",
-    "LINKEDIN": "linkedin.com/in/alicejohnson",
-    "GITHUB": "github.com/alicejohnson",
-    "education": [
-      {
-        "institution": "MIT",
-        "degree": "Ph.D. in Artificial Intelligence",
-        "location": "Cambridge, MA",
-        "date": "Sep. 2015 -- Jun. 2020"
-      },
-      {
-        "institution": "Stanford University",
-        "degree": "M.Sc. in Data Science",
-        "location": "Palo Alto, CA",
-        "date": "Sep. 2013 -- Jun. 2015"
-      }
-    ],
-    "experience": [
-      {
-        "company": "AI Labs",
-        "title": "Senior Researcher",
-        "location": "New York, NY",
-        "dates": "Jul. 2020 -- Present",
-        "bullets": [
-          "Led a team of 10 researchers on machine learning projects.",
-          "Published 5 papers in top-tier AI conferences.",
-          "Developed state-of-the-art neural network architectures."
-        ]
-      },
-      {
-        "company": "DataCorp",
-        "title": "Data Scientist",
-        "location": "Seattle, WA",
-        "dates": "Aug. 2015 -- Jun. 2020",
-        "bullets": [
-          "Analyzed big data to optimize marketing strategies.",
-          "Implemented machine learning models for customer segmentation."
-        ]
-      }
-    ],
-    "projects": [
-      {
-        "name": "Open Source AI Framework",
-        "date": "Jan. 2021 -- Present",
-        "bullets": [
-          "Built an open-source deep learning library used by thousands of developers.",
-          "Contributed to TensorFlow and PyTorch repositories."
-        ]
-      }
-    ],
-    "techSkills": {
-      "languages": ["Python", "C++", "R"],
-      "frameworks": ["TensorFlow", "Keras", "PyTorch"],
-      "tools": ["Jupyter Notebook", "Git", "Docker", "Kubernetes"],
-      "libraries": ["NumPy", "Pandas", "SciPy", "Matplotlib"]
+  "NAME": "Clara Lee",
+  "PHONE": "+192837465",
+  "EMAIL": "clara@example.com",
+  "LINKEDIN": "linkedin.com/in/claralee",
+  "GITHUB": "github.com/claralee",
+  "education": [
+    {
+      "institution": "MIT",
+      "location": "Cambridge, MA",
+      "degree": "Ph.D. in Machine Learning",
+      "date": "Aug. 2017 - May 2022"
     }
+  ],
+  "experience": [
+    {
+      "company": "AI Labs",
+      "title": "Research Scientist",
+      "location": "Boston, MA",
+      "dates": "June 2022 - Present",
+      "bullets": [
+        "Developed machine learning models for NLP applications",
+        "Published 5 research papers in top AI conferences"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Chatbot Framework",
+      "date": "Jan. 2022 - April 2022",
+      "techStack": ["TensorFlow", "Keras"],
+      "bullets": [
+        "Built a chatbot framework using deep learning techniques",
+        "Deployed the framework to AWS with containerized services"
+      ]
+    }
+  ],
+  "techSkills": {
+    "languages": ["Python", "C++", "Java"],
+    "frameworks": ["TensorFlow", "PyTorch"],
+    "tools": ["Git", "AWS"],
+    "libraries": ["NumPy", "Scikit-learn"]
   }
-  
+}

@@ -1,34 +1,44 @@
 {
-  "NAME": "Charlie DevOps",
-  "PHONE": "123-987-6540",
-  "EMAIL": "charliedevops@example.com",
-  "LINKEDIN": "",
-  "GITHUB": "github.com/charliedevops",
+  "NAME": "Emma Wilson",
+  "PHONE": "+456789123",
+  "EMAIL": "emma@example.com",
+  "LINKEDIN": "linkedin.com/in/emmawilson",
+  "GITHUB": "github.com/emmawilson",
   "education": [
     {
-      "institution": "University of DevOps",
-      "degree": "B.Sc. in Cloud Computing",
-      "location": "Cloud City",
-      "date": "Jan. 2020 -- Dec. 2023"
+      "institution": "University of California, Los Angeles",
+      "location": "Los Angeles, CA",
+      "degree": "B.Sc. in Software Engineering",
+      "date": "Aug. 2016 - May 2020"
     }
   ],
   "experience": [
     {
-      "company": "Cloud Innovators",
-      "title": "Junior DevOps Engineer",
-      "location": "Remote",
-      "dates": "Jan. 2024 -- Present",
+      "company": "Innovative Solutions",
+      "title": "Full Stack Developer",
+      "location": "Los Angeles, CA",
+      "dates": "July 2020 - Present",
       "bullets": [
-        "Automated CI/CD pipelines using Jenkins and GitHub Actions.",
-        "Monitored infrastructure using Prometheus and Grafana."
+        "Developed and maintained web applications using React and Node.js",
+        "Implemented CI/CD pipelines using Jenkins"
       ]
     }
   ],
-  "projects": [],
+  "projects": [
+    {
+      "name": "E-Commerce Platform",
+      "date": "Jan. 2020 - May 2020",
+      "techStack": ["React", "Node.js", "MongoDB"],
+      "bullets": [
+        "Built a scalable e-commerce platform from scratch",
+        "Integrated payment gateways for seamless transactions"
+      ]
+    }
+  ],
   "techSkills": {
-    "languages": ["Bash", "Python"],
-    "frameworks": [],
-    "tools": ["Kubernetes", "Terraform"],
-    "libraries": []
+    "languages": ["JavaScript", "Python"],
+    "frameworks": ["React", "Node.js"],
+    "tools": ["Git", "Jenkins"],
+    "libraries": ["Redux", "Express"]
   }
 }
