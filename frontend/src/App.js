@@ -24,7 +24,7 @@ function App() {
     const defaultValues = {
       education: { institution: "", degree: "", location: "", startDate: "", endDate: "" },
       experience: { company: "", title: "", location: "", startDate: "", endDate: "", bullets: [] },
-      projects: { name: "", startDate: "", endDate: "", bullets: [] },
+      projects: { name: "", startDate: "", endDate: "", bullets: [], techStack: [] },
     };
     setFormData({ ...formData, [key]: [...formData[key], defaultValues[key]] });
   };
@@ -61,6 +61,29 @@ function App() {
       },
     });
   };
+
+  // Add a tech stack item to a specific project
+  const handleTechStackAdd = (projectIndex, value) => {
+    if (value && !formData.projects[projectIndex].techStack?.includes(value)) {
+      const updatedProjects = [...formData.projects];
+      updatedProjects[projectIndex].techStack = [
+        ...(updatedProjects[projectIndex].techStack || []),
+        value,
+      ];
+      setFormData({ ...formData, projects: updatedProjects });
+    }
+  };
+
+  // Remove a tech stack item from a specific project
+  const handleTechStackRemove = (projectIndex, value) => {
+    const updatedProjects = [...formData.projects];
+    updatedProjects[projectIndex].techStack = updatedProjects[projectIndex].techStack.filter(
+      (tech) => tech !== value
+    );
+    setFormData({ ...formData, projects: updatedProjects });
+  };
+
+
 
   const addBullet = (key, index, bullet) => {
     const updatedSections = [...formData[key]];
@@ -139,7 +162,7 @@ function App() {
               <input type="text" placeholder="End Date (e.g., Present)" value={exp.endDate} onChange={(e) => handleInputChange("experience", index, "endDate", e.target.value)} />
               <div className="bullets">
                 <div className="bullet-input-group">
-                  <input type="text" placeholder="Add bullet point (e.g., Improved performance by 30%)" onKeyDown={(e) => {
+                  <input type="text" placeholder="Describe experience in short sentences (e.g., Improved performance by 30%)" onKeyDown={(e) => {
                     if (e.key === "Enter" && e.target.value.trim()) {
                       addBullet("experience", index, e.target.value.trim());
                       e.target.value = "";
@@ -201,6 +224,37 @@ function App() {
                   ))}
                 </ul>
               </div>
+
+              <div className="tech-stack">
+                <h3>Tech Stack</h3>
+                <div className="skills-tags">
+                  {proj.techStack &&
+                    proj.techStack.map((tech, techIndex) => (
+                      <span key={techIndex} className="skill-tag">
+                        {tech}
+                        <button
+                          type="button"
+                          className="remove-btn"
+                          onClick={() => handleTechStackRemove(index, tech)}
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ))}
+                </div>
+                <input
+                  type="text"
+                  placeholder="Add tech stack (e.g., React, Node.js)"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && e.target.value.trim()) {
+                      e.preventDefault();
+                      handleTechStackAdd(index, e.target.value.trim());
+                      e.target.value = "";
+                    }
+                  }}
+                />
+              </div>
+
               <button type="button" className="remove-btn" onClick={() => removeSection("projects", index)}>Remove Project</button>
             </div>
           ))}
