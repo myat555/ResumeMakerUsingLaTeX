@@ -58,7 +58,7 @@ const generateLatexFile = (userData) => {
     // Replace education placeholders
     const formatEducation = (edu) => `
         \\resumeSubheading
-        {${escapeLatex(edu.institution)}}{${escapeLatex(edu.location)}}
+        {${escapeLatex(edu.institution)}}{\\textnormal{${escapeLatex(edu.location)}}}
         {${escapeLatex(edu.degree)}}{${escapeLatex(edu.date)}}
     `;
     latexTemplate = latexTemplate.replace("{{EDUCATION}}", userData.education.map(formatEducation).join("\n"));
@@ -66,7 +66,7 @@ const generateLatexFile = (userData) => {
     // Replace experience placeholders
     const formatExperience = (exp) => `
         \\resumeSubheading
-        {${escapeLatex(exp.title)}}{${escapeLatex(exp.dates)}}
+        {${escapeLatex(exp.title)}}{\\textnormal{${escapeLatex(exp.dates)}}}
         {${escapeLatex(exp.company)}}{${escapeLatex(exp.location)}}
         \\resumeItemListStart
             ${exp.bullets.map(bullet => `\\resumeItem{${escapeLatex(bullet)}}`).join("\n")}
@@ -77,7 +77,7 @@ const generateLatexFile = (userData) => {
     // Replace projects placeholders with tech stack
     const formatProject = (proj) => `
         \\resumeProjectHeading
-        {${escapeLatex(proj.name)} $|$ \\emph{${proj.techStack.map(escapeLatex).join(", ")}}}{${escapeLatex(proj.date)}}
+        {${escapeLatex(proj.name)} $|$ \\emph{\\textnormal{\\textit{${proj.techStack.map(escapeLatex).join(", ")}}}}}{\\textnormal{${escapeLatex(proj.date)}}}
         \\resumeItemListStart
             ${proj.bullets.map(bullet => `\\resumeItem{${escapeLatex(bullet)}}`).join("\n")}
         \\resumeItemListEnd

@@ -40,6 +40,11 @@ function App() {
     setFormData({ ...formData, [key]: updatedSections });
   };
 
+  const formatDateRange = (startDate, endDate) => {
+    return startDate && endDate ? `${startDate} – ${endDate}` : startDate || endDate || "";
+  };
+
+  
   const handleSkillAdd = (category, value) => {
     if (value && !formData.techSkills[category].includes(value)) {
       setFormData({
@@ -83,8 +88,6 @@ function App() {
     setFormData({ ...formData, projects: updatedProjects });
   };
 
-
-
   const addBullet = (key, index, bullet) => {
     const updatedSections = [...formData[key]];
     updatedSections[index].bullets.push(bullet);
@@ -99,8 +102,26 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Format data with combined date ranges for submission
+    const formattedData = {
+      ...formData,
+      education: formData.education.map((edu) => ({
+        ...edu,
+        date: formatDateRange(edu.startDate, edu.endDate),
+      })),
+      experience: formData.experience.map((exp) => ({
+        ...exp,
+        dates: formatDateRange(exp.startDate, exp.endDate),
+      })),
+      projects: formData.projects.map((proj) => ({
+        ...proj,
+        date: formatDateRange(proj.startDate, proj.endDate),
+      })),
+    };
+
     try {
-      const response = await axios.post("http://localhost:5000/generate-resume", formData, {
+      const response = await axios.post("http://localhost:5000/generate-resume", formattedData, {
         responseType: "blob",
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));
