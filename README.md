@@ -19,6 +19,10 @@ To run this application locally, you need the following installed on your system
 3. **Docker Deployment**: Easily deployable using Docker and Docker Compose.
 4. **Customizable LaTeX Templates**: Edit the `resume_template.tex` to adjust resume formats.
 
+## Try it out online
+
+[Resume Maker](http://104.154.221.187)
+
 ---
 
 ## Installation
