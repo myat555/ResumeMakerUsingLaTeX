@@ -67,7 +67,7 @@
 
 .input-group input,
 .input-group textarea {
-  width: 90%; /* Adjust input field width to fit inside section */
+  width: 90%; 
   max-width: 90%;
   margin: 0 auto;
   padding: 0.8rem;
@@ -142,7 +142,7 @@ button[type="button"]:hover {
 
 .bullet-input-group input {
   flex: 1;
-  padding-right: 3rem; /* Reserve space for the button */
+  padding-right: 3rem; 
 }
 
 .bullet-input-group .add-btn {
@@ -214,7 +214,7 @@ button[type="button"]:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.5rem; /* Space between tags and the input field */
+  margin-bottom: 0.5rem; 
 }
 
 .skill-tag {
@@ -258,8 +258,8 @@ button[type="button"]:hover {
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
-  margin-bottom: 0.5rem; /* Adds space below the input field */
+  box-sizing: border-box; 
+  margin-bottom: 0.5rem; 
 }
 
 .skills-section {
